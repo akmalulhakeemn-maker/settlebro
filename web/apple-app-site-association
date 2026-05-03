@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appID": "NVM9U68L88.app.settlebro.ios",
+        "paths": [ "/join*" ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "settlebro-v2",
+          "appId": "1:729174695352:android:cddf695878a8e24dc3c34d",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "settlebro-v2",
+          "appId": "1:729174695352:ios:ccd0b185f175e3dec3c34d",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "settlebro-v2",
+          "configurations": {
+            "android": "1:729174695352:android:cddf695878a8e24dc3c34d",
+            "ios": "1:729174695352:ios:ccd0b185f175e3dec3c34d"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
