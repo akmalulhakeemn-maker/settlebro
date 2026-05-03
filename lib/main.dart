@@ -360,13 +360,14 @@ Future<void> shareGroupInvite(BuildContext context, Group group) async {
 }
 
 /// Premium prices by onboarding currency (extend map as needed).
+/// Fallbacks when RevenueCat / App Store prices are unavailable (matches AS tier).
 Map<String, double> premiumPricesForCurrency(String currency) {
   switch (currency.toUpperCase()) {
     case 'QAR':
     case 'SAR':
-      return {'monthly': 9.90, 'yearly': 90.0};
+      return {'monthly': 9.99, 'yearly': 99.99};
     default:
-      return {'monthly': 9.90, 'yearly': 90.0};
+      return {'monthly': 9.99, 'yearly': 99.99};
   }
 }
 
@@ -4498,7 +4499,7 @@ class _PremiumPricingScreenState extends State<PremiumPricingScreen> {
 
   String _fallbackYearlyPrice() {
     final prices = premiumPricesForCurrency(currentCurrency);
-    return '$currentCurrency ${prices['yearly']!.toStringAsFixed(0)}';
+    return '$currentCurrency ${prices['yearly']!.toStringAsFixed(2)}';
   }
 
   /// Second line on yearly plan (monthly equivalent billed annually).
